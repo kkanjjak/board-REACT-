@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "SUITE-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+.canvas {
+  font-family: "SUITE-Regular";
+
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerCanvas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbarContainer {
+  padding-top: 15px;
+  width: 60%;
+}
+.navbar {
+  color: black;
+  font-size: 18px;
+  margin: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.tableContainer {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+td,
+th {
+  border: 1px solid gainsboro;
+  text-align: center;
+}
+tr {
+  height: 30px;
+}
+
+.createContainer {
+  display: flex;
+  flex-direction: row;
+}
