@@ -105,19 +105,19 @@ function App() {
       id: 1,
       keyword: "test",
       context: "im a test page",
-      date: null,
-      author: "Hong",
+      date: "2023. 8. 10.",
+      author: "홍기원",
     },
   ]);
   const [id, setId] = useState(null);
   const [nextId, setNextId] = useState(2);
 
   const [mode, setMode] = useState("home");
-  const [locationNow, setLocaionNow] = useState("");
+  const [locationNow, setLocationNow] = useState("");
   let content = null;
 
   /* mode */
-  if (locationNow === "/board") {
+  if (locationNow === "/board" || mode === "/board") {
     content = (
       <div>
         <Board topics={topics} />
@@ -138,7 +138,6 @@ function App() {
             setTopics([...topics, newTopic]);
             setId(nextId);
             setNextId(nextId + 1);
-            setLocaionNow("/board");
           }}
         />
       </div>
@@ -151,7 +150,7 @@ function App() {
       <BrowserRouter>
         <Header
           onChange={(e) => {
-            setLocaionNow(e);
+            setLocationNow(e);
           }}
         />
         {content}

@@ -1,6 +1,11 @@
 import "./App.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function Create(props) {
+  let navigate = useNavigate();
+  const createRedirect = () => {
+    navigate("/board");
+  };
   return (
     <div>
       <h1>New Topic😊</h1>
@@ -12,6 +17,7 @@ function Create(props) {
             const context = event.target.context.value;
             const author = event.target.author.value;
             props.onCreate(keyword, context, author);
+            createRedirect();
           }}
         >
           <div className="createGrid">
@@ -30,6 +36,7 @@ function Create(props) {
               required
             />
             <textarea
+              spellcheck="false"
               name="context"
               type="text"
               placeholder="내용을 작성하여 주십시오"
@@ -37,6 +44,7 @@ function Create(props) {
             />
             <button
               className="createBtn"
+              href="/board"
               type="submit"
               value="추가하기"
               style={{

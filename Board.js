@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Board(props) {
   let boardContent = props.topics.map((p) => {
     return (
@@ -6,6 +8,11 @@ function Board(props) {
         <td>{p.keyword}</td>
         <td>
           <a
+            style={{
+              textDecoration: "none",
+              color: "black",
+              // display: "block",
+            }}
             id={p.id}
             href={"/read/" + p.id}
             onClick={(event) => {
@@ -18,13 +25,27 @@ function Board(props) {
         </td>
         <td>{p.date}</td>
         <td>{p.author}</td>
-        <td></td>
+        <td>
+          <Link
+            to={"/update/" + p.id}
+            style={{
+              color: "black",
+              textAlign: "center",
+              textDecoration: "none",
+              fontSize: 15,
+              // border: "2px solid #fad985",
+              // borderRadius: 5,
+            }}
+          >
+            수정하기
+          </Link>
+        </td>
       </tr>
     );
   });
   return (
     <div>
-      <h1 style={{ textAlign: "center", marginBottom: 10 }}>Board</h1>
+      <h1 style={{ textAlign: "center", marginBottom: 10 }}>React, Insane!</h1>
       <div
         style={{
           position: "relative",
@@ -37,8 +58,8 @@ function Board(props) {
           alignItems: "flex-end",
         }}
       >
-        <a
-          href="/create"
+        <Link
+          to={"/create"}
           style={{
             display: "block",
             width: 50,
@@ -56,7 +77,7 @@ function Board(props) {
           }}
         >
           Add
-        </a>
+        </Link>
         <div className="tableContainer">
           <table
             style={{
