@@ -52,6 +52,61 @@ tr {
 }
 
 .createContainer {
-  display: flex;
-  flex-direction: row;
+  width: 600px;
+  position: relative;
 }
+
+.createGrid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid gainsboro;
+  border-radius: 10px;
+  /* display: grid;
+  grid-template-areas: "a a b b";
+  column-gap: 5px; */
+}
+
+.createGrid .createDetail {
+  margin: 10px;
+  padding: 10px;
+  padding-bottom: 5px;
+
+  border: none;
+  border-bottom: 1px solid gainsboro;
+  transition: 0.5s ease-out;
+}
+.createGrid textarea {
+  width: 90%;
+  height: 10em;
+  resize: none;
+  margin: 10px;
+  padding: 10px;
+  padding-bottom: 0;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+  transition: 0.5s ease-out;
+}
+.createGrid input:focus {
+  outline: none;
+  border-bottom: 1px solid #fad985;
+}
+.createGrid textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #fad985;
+}
+.createBtn {
+  position: relative;
+  bottom: 200px;
+  left: 80%;
+}
+
+/* .createGrid input:nth-child(1) {
+  grid-area: a;
+} 
+.createGrid input:nth-child(2) {
+  grid-area: b;
+}
+.createGrid input:nth-child(3) {
+  grid-area: c;
+} */
