@@ -33,6 +33,8 @@
   text-decoration: none;
 }
 
+/* Board.js */
+
 .tableContainer {
   width: 800px;
   margin-left: auto;
@@ -48,8 +50,10 @@ th {
   text-align: center;
 }
 tr {
-  height: 30px;
+  height: 40px;
 }
+
+/* Create.js */
 
 .createContainer {
   width: 600px;
@@ -62,7 +66,7 @@ tr {
 
   position: relative;
   width: 100%;
-  height: 15em;
+  height: 17.5em;
   border: 2px solid gainsboro;
   border-radius: 10px;
   /* display: grid;
@@ -98,18 +102,67 @@ tr {
   outline: none;
   border: 1px solid #fad985;
 }
+.createTitle {
+  width: 80%;
+}
 .createBtn {
   position: relative;
-  bottom: 205px;
+  bottom: 260px;
   left: 80%;
 }
 
-/* .createGrid input:nth-child(1) {
-  grid-area: a;
-} 
-.createGrid input:nth-child(2) {
-  grid-area: b;
+/* Detail.js */
+
+.detailTable {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+
+  border-radius: 10px;
+  /* border-style: hidden; */
+  border-collapse: collapse;
 }
-.createGrid input:nth-child(3) {
-  grid-area: c;
-} */
+.contextBox {
+  /* padding: 5px; */
+}
+
+.detailConsoleContainer {
+  width: 795px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.detailButton {
+  text-align: center;
+  text-decoration: none;
+  font-family: "SUITE-Regular";
+  border: none;
+  border-radius: 5px;
+  background-color: tomato;
+  color: white;
+  font-size: 15px;
+
+  margin-left: 10px;
+  width: 60px;
+  padding: 3px;
+}
+
+/* Update.js */
+.updateDetail {
+  margin: 10px;
+  padding: 10px;
+  padding-bottom: 5px;
+
+  border: none;
+  border-bottom: 1px solid gainsboro;
+  transition: 0.5s ease-out;
+}
+.updateDetail:focus {
+  outline: none;
+  border-bottom: 1px solid #fad985;
+}

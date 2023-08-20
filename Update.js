@@ -1,24 +1,31 @@
+import { useState } from "react";
 import "./App.css";
 import { Link, useNavigate } from "react-router-dom";
 
-function Create(props) {
+function Update(props) {
   let navigate = useNavigate();
-  const createRedirect = () => {
+  const updateRedirect = () => {
     navigate("/board");
   };
+
+  const [newTitle, setNewTitle] = useState(props.title);
+  const [newKeyword, setNewKeyword] = useState(props.keyword);
+  const [newContext, setNewContext] = useState(props.context);
+  const [newAuthor, setNewAuthor] = useState(props.author);
+
   return (
     <div>
-      <h1>New Topic😊</h1>
+      <h1>Update Topic😊</h1>
       <div className="createContainer">
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            const keyword = event.target.keyword.value;
-            const title = event.target.title.value;
-            const context = event.target.context.value;
-            const author = event.target.author.value;
-            props.onCreate(keyword, title, context, author);
-            createRedirect();
+            const newKeyword = event.target.keyword.value;
+            const newTitle = event.target.title.value;
+            const newContext = event.target.context.value;
+            const newAuthor = event.target.author.value;
+            props.onUpdate(newTitle, newContext, newKeyword, newAuthor);
+            updateRedirect();
           }}
         >
           <div className="createGrid">
@@ -27,6 +34,11 @@ function Create(props) {
               name="keyword"
               type="text"
               placeholder="keyword"
+              value={newKeyword}
+              onChange={(event) => {
+                event.preventDefault();
+                setNewKeyword(event.target.value);
+              }}
               spellCheck="false"
               required
             />
@@ -34,6 +46,11 @@ function Create(props) {
               className="createDetail"
               name="author"
               type="text"
+              value={newAuthor}
+              onChange={(event) => {
+                event.preventDefault();
+                setNewAuthor(event.target.value);
+              }}
               placeholder="author"
               spellCheck="false"
               required
@@ -42,6 +59,11 @@ function Create(props) {
               className="createDetail createTitle"
               name="title"
               type="text"
+              value={newTitle}
+              onChange={(event) => {
+                event.preventDefault();
+                setNewTitle(event.target.value);
+              }}
               placeholder="title"
               spellCheck="false"
               required
@@ -50,6 +72,11 @@ function Create(props) {
               spellCheck="false"
               name="context"
               type="text"
+              value={newContext}
+              onChange={(event) => {
+                event.preventDefault();
+                setNewContext(event.target.value);
+              }}
               placeholder="내용을 작성하여 주십시오"
               required
             />
@@ -66,7 +93,7 @@ function Create(props) {
                 backgroundColor: "white",
               }}
             >
-              추가하기
+              저장하기
             </button>
           </div>
         </form>
@@ -75,4 +102,4 @@ function Create(props) {
   );
 }
 
-export default Create;
+export default Update;

@@ -2,44 +2,26 @@ import { Link } from "react-router-dom";
 
 function Board(props) {
   let boardContent = props.topics.map((p) => {
+    props.onClick(p.id);
     return (
       <tr key={p.id}>
         <td>{p.id}</td>
         <td>{p.keyword}</td>
         <td>
-          <a
+          <Link
             style={{
               textDecoration: "none",
               color: "black",
               // display: "block",
             }}
             id={p.id}
-            href={"/read/" + p.id}
-            onClick={(event) => {
-              event.preventDefault();
-              props.onChangeMode(Number(event.target.id));
-            }}
+            to={"/read"}
           >
-            {p.context}
-          </a>
+            {p.title}
+          </Link>
         </td>
         <td>{p.date}</td>
         <td>{p.author}</td>
-        <td>
-          <Link
-            to={"/update/" + p.id}
-            style={{
-              color: "black",
-              textAlign: "center",
-              textDecoration: "none",
-              fontSize: 15,
-              // border: "2px solid #fad985",
-              // borderRadius: 5,
-            }}
-          >
-            수정하기
-          </Link>
-        </td>
       </tr>
     );
   });
@@ -87,21 +69,19 @@ function Board(props) {
             }}
           >
             <colgroup>
-              <col width="10%" />
+              <col width="8%" />
               <col width="15%" />
-              <col width="35%" />
+              <col width="50%" />
               <col width="15%" />
-              <col width="13%" />
               <col width="17%" />
             </colgroup>
             <thead>
               <tr style={{ height: 30 }}>
-                <td>index</td>
-                <td>keyword</td>
-                <td>context</td>
-                <td>date</td>
-                <td>author</td>
-                <td>update</td>
+                <td>연 번</td>
+                <td>구 분</td>
+                <td>제 목</td>
+                <td>작성일</td>
+                <td>작성자</td>
               </tr>
             </thead>
             <tbody>{boardContent}</tbody>
